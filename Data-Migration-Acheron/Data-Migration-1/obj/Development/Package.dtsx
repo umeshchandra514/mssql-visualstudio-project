@@ -11,27 +11,16 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:ProtectionLevel="0"
-  DTS:VersionBuild="90"
-  DTS:VersionGUID="{A4663E23-9207-422D-BAD7-E60D86C48652}">
+  DTS:VersionBuild="103"
+  DTS:VersionGUID="{09151E69-0EF7-4272-B2B0-605B3461A920}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[umesh]"
-      DTS:CreationName="SMOServer"
-      DTS:DTSID="{9A6C32DB-08F7-4E4D-B240-B3C4768C67E4}"
-      DTS:ObjectName="umesh">
-      <DTS:ObjectData>
-        <SMOServerConnectionManager
-          ConnectionString="SqlServerName=umesh;UseWindowsAuthentication=True;UserName=;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[umesh.DEV-DB]"
+      DTS:refId="Package.ConnectionManagers[DEV-DB]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{078B3819-F686-4F98-B602-57D577CE175D}"
-      DTS:ObjectName="umesh.DEV-DB">
+      DTS:ObjectName="DEV-DB">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Package::DEV_DB_ConnectionString]</DTS:PropertyExpression>
       <DTS:PropertyExpression
@@ -45,15 +34,32 @@
           DTS:ConnectionString="Data Source=192.168.1.17;User ID=devops;Initial Catalog=Dev_DB_DevOps;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
-            Sensitive="1"></DTS:Password>
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAArKQ2SCE8HB5tO1pXAiwkP89DgVPHqhl/c8mST0L9S3gAAAAAOgAAAAAIAACAAAACQB5WOkIw8Ag98RqFRKKUYbPr+X4FVBx/I0SCdvPSH/DAAAACij0cczvSo5UEBAezL6JTsoQryNc2ogY8ysWwq2tlL5FWFL9dBms0ovolFvrVcHS1AAAAAtYvnstqxwTF0gAt2OvrlaoIQ3EW85LB/9FRiKrQTDN6R/1GWt9tTwo1fJpCHAh8TnR/IsE0qjXd+UtFSf5XBcA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[umesh.QA-DB]"
+      DTS:refId="Package.ConnectionManagers[DEV-DB-SMO]"
+      DTS:CreationName="SMOServer"
+      DTS:DTSID="{51d5f14f-d91d-4c8e-a7f9-bb45332585d0}"
+      DTS:ObjectName="DEV-DB-SMO">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Package::DEV_DB_SMO_ConnectionString]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SMOServerConnectionManager
+          ConnectionString="SqlServerName=192.168.1.17;UseWindowsAuthentication=False;UserName=devops;">
+          <PassWord
+            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACBAqsO8TG25MvXohWh0pOw/9+7oV4gEfMjaAfTT8kcvwAAAAAOgAAAAAIAACAAAAAdKq4tRO027qxiIyN+U7/LcYLsjFRLt20rkfZE25rx6jAAAAC7cq0Nk1bdP9B5DMbmPN3IJ0E5ysnqkOdr921zvdlbusE8LHc9qi3KZlXFxF7dKmNAAAAA8aR0K4DAIvH3MwNQW1xae1wJit2vhvGCiUe6M4SVLYTxooqS5fTpjwKvSCsReBq6RK3jAwT1MjmfEJWGvUyVhQ</PassWord>
+        </SMOServerConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[QA-DB]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{2A9A4D1E-B679-4ED3-A314-189DF376DA7E}"
-      DTS:ObjectName="umesh.QA-DB">
+      DTS:ObjectName="QA-DB">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Package::QA_DB_ConnectionString]</DTS:PropertyExpression>
       <DTS:PropertyExpression
@@ -67,8 +73,39 @@
           DTS:ConnectionString="Data Source=192.168.1.17;User ID=devops;Initial Catalog=QA_DB_DevOps;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
-            Sensitive="1"></DTS:Password>
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADIIGWYyIyxKzTJr03NXV+8bzdgILLo06+PAf1D84el4wAAAAAOgAAAAAIAACAAAACoVjq9uZ7M4inXWwZ7SYFs9x+DAuigVZKwSa68yGLw2DAAAACKhNhJ4smcxutFs9kTtFSn2HEpR4BE1DcOcsiWWmWCT8KCQVBGWcQ806QPzVOd9WFAAAAAWQKwR7hCKdNtwJzGYQLs5E7Lh9QwjiBK8yEwB4X7is1hWE4LknpPGqKvgnlNHsWZKHUQ2no9yYl5JoP9POphsQ</DTS:Password>
         </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[QA-DB-SMO]"
+      DTS:CreationName="SMOServer"
+      DTS:DTSID="{9A6C32DB-08F7-4E4D-B240-B3C4768C67E4}"
+      DTS:ObjectName="QA-DB-SMO">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Package::QA_DB_SMO_ConnectionString]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Password">@[$Package::QA_DB_Password]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="UserName">@[$Package::QA_DB_UserName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SMOServerConnectionManager
+          ConnectionString="SqlServerName=192.168.1.17;UseWindowsAuthentication=False;UserName=devops;">
+          <PassWord
+            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD7x9SCqK2fhuhxL9LFmsG1/9GhcjOpUHWP+IFTmIHDNgAAAAAOgAAAAAIAACAAAAA2AvCWebr2Xn2sJJPMapv1WqKmo61jXxAWTjKnDryBiTAAAABOeQiHz0VTw//5N6VPE2i/ntK3d4krM0iXH+7oU0Ks8Q+cMz+pl4GWuJ+GEc46q6FAAAAAgTAzolZkuolVzzFEnz7ILhH9NADzjy553NC5GsuFhWNnx9Uf/bI5sUCf6PQ7AEIncrqH2JOAwQgJtwkC3jK2JQ</PassWord>
+        </SMOServerConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[umesh.umesh]"
+      DTS:CreationName="SMOServer"
+      DTS:DTSID="{BAD4F463-9C95-4E54-9380-911CEC70E60A}"
+      DTS:ObjectName="umesh.umesh">
+      <DTS:ObjectData>
+        <SMOServerConnectionManager
+          ConnectionString="SqlServerName=umesh;UseWindowsAuthentication=False;UserName=umesh;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -101,6 +138,15 @@
       <DTS:Property
         DTS:DataType="8"
         DTS:Name="ParameterValue">192.168.1.17</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{76151462-8211-458C-BCAB-A51CD236D468}"
+      DTS:ObjectName="DEV_DB_SMO_ConnectionString">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">SqlServerName=192.168.1.17;UseWindowsAuthentication=False;UserName=devops;</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -138,6 +184,15 @@
       <DTS:Property
         DTS:DataType="8"
         DTS:Name="ParameterValue">192.168.1.17</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{7BF79807-5C69-4A2D-9B4C-D2420A268FCE}"
+      DTS:ObjectName="QA_DB_SMO_ConnectionString">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">SqlServerName=192.168.1.17;UseWindowsAuthentication=False;UserName=devops;</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -337,8 +392,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[umesh.DEV-DB]"
-                      connectionManagerRefId="Package.ConnectionManagers[umesh.DEV-DB]"
+                      connectionManagerID="Package.ConnectionManagers[DEV-DB]"
+                      connectionManagerRefId="Package.ConnectionManagers[DEV-DB]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -568,8 +623,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[umesh.QA-DB]"
-                      connectionManagerRefId="Package.ConnectionManagers[umesh.QA-DB]"
+                      connectionManagerID="Package.ConnectionManagers[QA-DB]"
+                      connectionManagerRefId="Package.ConnectionManagers[QA-DB]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -883,8 +938,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[umesh.DEV-DB]"
-                      connectionManagerRefId="Package.ConnectionManagers[umesh.DEV-DB]"
+                      connectionManagerID="Package.ConnectionManagers[DEV-DB]"
+                      connectionManagerRefId="Package.ConnectionManagers[DEV-DB]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1192,8 +1247,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[umesh.QA-DB]"
-                      connectionManagerRefId="Package.ConnectionManagers[umesh.QA-DB]"
+                      connectionManagerID="Package.ConnectionManagers[QA-DB]"
+                      connectionManagerRefId="Package.ConnectionManagers[QA-DB]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1396,7 +1451,7 @@
       DTS:refId="Package\Transfer SQL Server Objects Task"
       DTS:CreationName="Microsoft.TransferSqlServerObjectsTask"
       DTS:Description="Transfer SQL Server Objects Task"
-      DTS:DTSID="{4953D384-44F7-4955-85BC-3EFA2E9E50D8}"
+      DTS:DTSID="{814B92F2-45A4-4D1A-BD46-2320D8505265}"
       DTS:ExecutableType="Microsoft.TransferSqlServerObjectsTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Transfer SQL Server Objects Task"
@@ -1405,12 +1460,11 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <TransferSqlServerObjectsTaskData
-          SourceConnection="{9A6C32DB-08F7-4E4D-B240-B3C4768C67E4}"
+          SourceConnection="{51d5f14f-d91d-4c8e-a7f9-bb45332585d0}"
           DestinationConnection="{9A6C32DB-08F7-4E4D-B240-B3C4768C67E4}"
-          SourceDatabase="DEV-DB"
-          DestinationDatabase="QA-DB"
-          TablesList="2,30,[dbo].[SHRDAcheronMPMCATEGORY],30,[dbo].[SHRDAcheronMPMPRIORITY],"
-          DropObjectsFirst="True" />
+          SourceDatabase="DEV_DB_DevOps"
+          DestinationDatabase="QA_DB_DevOps"
+          TablesList="2,30,[dbo].[SHRDAcheronMPMCATEGORY],30,[dbo].[SHRDAcheronMPMPRIORITY]," />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -1418,7 +1472,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{A8178402-94B0-4A81-B844-330B4BAE920D}"
+      DTS:DTSID="{9B13A2DA-8882-47AA-B368-B2149A71A340}"
       DTS:From="Package\Transfer SQL Server Objects Task"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -1506,33 +1560,33 @@
         <NodeLayout
           Size="237.6,41.6"
           Id="Package\Transfer SQL Server Objects Task"
-          TopLeft="225.999991019567,33.2800002644857" />
+          TopLeft="289.999988476436,5.54666671074761" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="344.799991019567,74.8800002644857">
+          TopLeft="408.799988476436,47.1466667107476">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="110.033340353436,38.0866672562493"
+              EndConnector="46.033342896567,65.8200008099874"
               Start="0,0"
-              End="110.033340353436,30.5866672562493">
+              End="46.033342896567,58.3200008099874">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.0433336281247" />
+                    End="0,28.9100004049937" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.0433336281247"
-                    Point2="0,19.0433336281247"
-                    Point3="4,19.0433336281247" />
+                    Point1="0,28.9100004049937"
+                    Point2="0,32.9100004049937"
+                    Point3="4,32.9100004049937" />
                   <mssgle:LineSegment
-                    End="106.033340353436,19.0433336281247" />
+                    End="42.033342896567,32.9100004049937" />
                   <mssgle:CubicBezierSegment
-                    Point1="106.033340353436,19.0433336281247"
-                    Point2="110.033340353436,19.0433336281247"
-                    Point3="110.033340353436,23.0433336281247" />
+                    Point1="42.033342896567,32.9100004049937"
+                    Point2="46.033342896567,32.9100004049937"
+                    Point3="46.033342896567,36.9100004049937" />
                   <mssgle:LineSegment
-                    End="110.033340353436,30.5866672562493" />
+                    End="46.033342896567,58.3200008099874" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1650,7 +1704,7 @@
     design-time-name="Package\Sequence Container\MPMPriority Data Transfer">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="159.2,41.6"
           Id="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA"
@@ -1682,7 +1736,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1704,14 +1760,16 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="s"
           ParentId="Package\Sequence Container\MPMPriority Data Transfer"
           FontInfo="{assembly:Null}"
-          Size="33.6,40"
+          Size="33.6,NaN"
           Id="106314f4-a0bb-497d-919b-b97a1cfe3361"
           TopLeft="5.5,5.5" />
       </GraphLayout>
