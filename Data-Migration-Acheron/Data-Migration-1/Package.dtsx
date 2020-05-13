@@ -11,8 +11,8 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="88"
-  DTS:VersionGUID="{7DA30E7F-7429-4262-A95E-5B33F54EE88B}">
+  DTS:VersionBuild="89"
+  DTS:VersionGUID="{3C88091D-F651-4CE4-9955-D0B52E37D6E7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -45,7 +45,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA4XRK9zqvPU5JgEmCno7bK+ZeeBGH+p1uK+NLWgA0K9gAAAAAOgAAAAAIAACAAAABSq7Oh6m5QM+rZf88d6CMa3OtRJ4e/fnQK/bFQV7pXujAAAAAJ0kvjvzoRpQ+NUKdWqsTNTNnMosENvkjMUOnSyZaaYHoqRIyZLstanEwTJEFc9ElAAAAAjjJqu2G5GeMZbqeymj0q5AVcFoLMp/fib0uhMmBgYgM/FoodNxT7WeUcL203RcnCzYP3P8RBs7pqkBEbBSWAVQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABnYFoweYn2wyV27+Y8gl0pLXdZW/J8hfX6z8KLl9u6fQAAAAAOgAAAAAIAACAAAACIzsNHFhmrMF84DAu4D8+mbx8/rqsiI3VczVx5r2ACRzAAAADss41ghwfquvefIe8vf1LnoNA0pkHNw+Ev1aaCz66Ntr7unGnngvyJuMS+L59IZTZAAAAAHGR+b1XNzJxV49Q0z8cOGayHs+muhNPgWeHw0zAMQBN67Jfc6gLzvu8/mweTc7twHwKWjg2XD2PIVz3R5wMgEA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -68,7 +68,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABSKv0LI2cVLePmZZV6szgz2HjNwgzRWfAjihN6pw9p+gAAAAAOgAAAAAIAACAAAAACG1OAvVhGGXAWVdbjHDAXVtZKelJnsk95L04Bkwun7zAAAAD1BuJ9/wGfzdubIDodOAnQddLzKDe8+sdq6rSUOLKjjcb9pgHXPqNt8fck8edx66NAAAAAdSTt5UOjJJwbgUpYmsLCge5R4ldcZow5Dk08kbzdptAHSYP/U+twXEcsHByzrzW6ZS4frmLVC2B7oOXlA90Fkg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAw5aI3WlzZVosOX/UYotxb+v2NXVTqkaQwBNFvuOfbjQAAAAAOgAAAAAIAACAAAABCmUT21FiZ+5uoCpVWE/wW5Jodec0hMpWnSSm68bNh4zAAAAChZbvx6K1gWoabYgxVSnFdjxv9SWMXFsYA6DF5U9X217fKloHzcHrYNkEz9UR0WSpAAAAA9jH+3q7jaQdbbMJBoZ1+LrymaFwf+SffyGS92Es28lFwpiiB6/8u4TGUWgm+3AXUdwpj8WarSu6p1uyavj8ZIA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -88,15 +88,10 @@
       DTS:DataType="8"
       DTS:DTSID="{0095FA03-789C-4AA7-B32D-6A22D7C41DA6}"
       DTS:ObjectName="DEV_DB_Password"
-      DTS:Required="True"
-      DTS:Sensitive="True">
+      DTS:Required="True">
       <DTS:Property
-        DTS:Name="ParameterValue">
-        <DTS:Property
-          DTS:DataType="8"
-          DTS:Name="ParameterValue"
-          Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAn9xlPGv+Gsj4KEIpRZT6rNUTIbiQQzUpShVRybAz6BAAAAAAOgAAAAAIAACAAAABAaupuUNLaivB3DWTajMyT1Q7DQhLTyEP1RtyOjLQ0QDAAAADZUT2DtXJfsB5rPrg3nVwc3XprqIn3IPV1D/LVOEPM8GNIa6irL89rQnWSzRmFSWdAAAAAxu+9OBlZuA85by15a7s4cjPr+wvGrE++BeE6fJ9a6SyN02Nik9fpIpN5z3FnhnsgdKPfCTzu6I55DdTtC6uDow</DTS:Property>
-      </DTS:Property>
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Y8SlNYl7bLpzPkGIyB2j</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -131,15 +126,10 @@
       DTS:CreationName=""
       DTS:DataType="8"
       DTS:DTSID="{61FF7E82-2104-427B-A7F0-720FAD0A46A4}"
-      DTS:ObjectName="QA_DB_Password"
-      DTS:Sensitive="True">
+      DTS:ObjectName="QA_DB_Password">
       <DTS:Property
-        DTS:Name="ParameterValue">
-        <DTS:Property
-          DTS:DataType="8"
-          DTS:Name="ParameterValue"
-          Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC29zBtXblepurlKAPNzXfBQBdSHnmGWN0FvAX7UkXzQAAAAAAOgAAAAAIAACAAAAARgce/fwX+BTFZXYbvupFYjevlqmD1qFEOuKYd/W3+UTAAAABML7Z8YMEdZ8sw/gp8rvEhbtX3VRtVaZ4uffkW+bD9g4dhNJGhgEoVA73XDUjgBDNAAAAA7o3gYtnVYpcWq/VQrlYO047jIO8W3Hs2i7nXjMUXTDuMASWnOLe4EYwOxlgUsTrXK49p5B6gxnPHeRXzRLl6Lw</DTS:Property>
-      </DTS:Property>
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Y8SlNYl7bLpzPkGIyB2j</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
