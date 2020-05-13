@@ -11,8 +11,8 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="64"
-  DTS:VersionGUID="{3045AF2A-AB23-4526-84A5-271C53837577}">
+  DTS:VersionBuild="84"
+  DTS:VersionGUID="{E22D5958-E6B0-4E39-AF78-4233FD083523}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,10 +32,21 @@
       DTS:DTSID="{078B3819-F686-4F98-B602-57D577CE175D}"
       DTS:ObjectName="umesh.DEV-DB">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Package::Dev_DB_Connection_String]</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[$Package::DEV_DB_ConnectionString]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Password">@[$Package::DEV_DB_Password]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Package::DEV_DB_ServerName]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="UserName">@[$Package::DEV_DB_UserName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=umesh;Initial Catalog=DEV-DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=umesh;User ID=umesh;Initial Catalog=DEV-DB;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAiibEbkglr6pyg7nfZ4fHSqbr4Cy4tArsOsc71bUjA8QAAAAAOgAAAAAIAACAAAAD5zULxgSNaG5ZZo3z4/KMlnGvbzuLcHlmzhja59TP07RAAAACxbY9SMPZinSTsxhjBV+RMQAAAAJT8qqaqWFlqNgS8abamvNDEF6xjoj4iLCT/PGHkXDcwoaUoVyXO6JXCB3yY1sIyT6owFWmZkJPBCUgE8sfLu50</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -44,10 +55,21 @@
       DTS:DTSID="{2A9A4D1E-B679-4ED3-A314-189DF376DA7E}"
       DTS:ObjectName="umesh.QA-DB">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Package::QA_DB_connection_String]</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[$Package::QA_DB_ConnectionString]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Password">@[$Package::QA_DB_Password]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Package::QA_DB_ServerName]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="UserName">@[$Package::QA_DB_UserName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=umesh;Initial Catalog=QA-DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=umesh;User ID=umesh;Initial Catalog=QA-DB;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADqnuYEQ6iBFSOtBP3DMOmFDLdgdF39NoB3zGFS2Rlx1gAAAAAOgAAAAAIAACAAAABd7i+2xwfBOjTLgTU22VTZfKwx5hgREAE9i04lOPfEEhAAAADihc5dGZxCXJ0jhJZfAyRkQAAAANCpiluXqyOnC2aVlSzNIJWLcdW5duHAfoNW/djwj2YOfqSEF0EKYMF+t6GSsX993nf851bUUBOPnr4Txh3/FfY</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -55,22 +77,87 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{CCBC2442-737C-4187-B515-FE983CC3FA1A}"
-      DTS:ObjectName="Dev_DB_Connection_String"
-      DTS:Required="True">
+      DTS:DTSID="{4CEC552C-5619-4BF8-9530-33C90B4E5182}"
+      DTS:ObjectName="DEV_DB_ConnectionString">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">Data Source=umesh;Initial Catalog=DEV-DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:Property>
+        DTS:Name="ParameterValue">Data Source=umesh;User ID=umesh;Initial Catalog=DEV-DB;Provider=SQLNCLI11.1;Auto Translate=False;</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{EA38575D-A59A-455E-AD94-982F42F31E19}"
-      DTS:ObjectName="QA_DB_connection_String"
+      DTS:DTSID="{0095FA03-789C-4AA7-B32D-6A22D7C41DA6}"
+      DTS:ObjectName="DEV_DB_Password"
+      DTS:Required="True"
+      DTS:Sensitive="True">
+      <DTS:Property
+        DTS:Name="ParameterValue">
+        <DTS:Property
+          DTS:DataType="8"
+          DTS:Name="ParameterValue"
+          Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACBSEW2VnlHcMWQHerslDU0FQGf4dwK8J79vqeO/gHMggAAAAAOgAAAAAIAACAAAAAIJvs6C1F613ZsN+qA+vYtLGCW6F0Kf0vh9tx8EWPOuBAAAABHNSDoARbdARjaUpEfDcKzQAAAAB3v6+tgbTQmkq4/hvmSEgegfcwGIYjIcMs6/eo0vrfG1xZEnwGDeWFbqVQIcFXrZ6TM1+zrZtt9YJtKZEHE0ug</DTS:Property>
+      </DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{EE8D2B56-1B62-44B6-9B12-F961842433F8}"
+      DTS:ObjectName="DEV_DB_ServerName"
       DTS:Required="True">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">Data Source=umesh;Initial Catalog=QA-DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:Property>
+        DTS:Name="ParameterValue">umesh</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{0CEF3D19-13DB-43D5-9A5C-A9C48B669887}"
+      DTS:ObjectName="DEV_DB_UserName"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">umesh</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{0956349F-F3E7-42A9-8725-E2117979E903}"
+      DTS:ObjectName="QA_DB_ConnectionString">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Data Source=umesh;User ID=umesh;Initial Catalog=QA-DB;Provider=SQLNCLI11.1;Auto Translate=False;</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{61FF7E82-2104-427B-A7F0-720FAD0A46A4}"
+      DTS:ObjectName="QA_DB_Password"
+      DTS:Sensitive="True">
+      <DTS:Property
+        DTS:Name="ParameterValue">
+        <DTS:Property
+          DTS:DataType="8"
+          DTS:Name="ParameterValue"
+          Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABJhyVn0biQakyTqHgkfrqC+RNTdVOhSDPUSPfvUkja3QAAAAAOgAAAAAIAACAAAADgvBhqele7l3hj0x1tzdoVFL7nBCLixCiMOaDTENZbdhAAAAA0kd7PviUbpXUNTH2m/WxlQAAAAEd2Z4NwiXttxfIzYl+6655DRYWx7a570z2MtL03OrrEi33wYskaSR0PjEQJPQ2DFFvbWDNExvBs130uDUexO1M</DTS:Property>
+      </DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{B5358682-19C6-4A01-86BE-EEB4920AB837}"
+      DTS:ObjectName="QA_DB_ServerName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">umesh</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{649C33DD-C924-4994-AF76-18CBE265D73D}"
+      DTS:ObjectName="QA_DB_UserName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">umesh</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -114,7 +201,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="MPMCategory - Clear Data"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -637,7 +724,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="MPMPriority - Clear Data"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1430,33 +1517,33 @@
         <NodeLayout
           Size="237.6,41.6"
           Id="Package\Transfer SQL Server Objects Task"
-          TopLeft="186.6666592492,40.9066669917637" />
+          TopLeft="225.999991019567,33.2800002644857" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="305.4666592492,82.5066669917637">
+          TopLeft="344.799991019567,74.8800002644857">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="149.366672123803,30.4600005289713"
+              EndConnector="110.033340353436,38.0866672562493"
               Start="0,0"
-              End="149.366672123803,22.9600005289713">
+              End="110.033340353436,30.5866672562493">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.2300002644857" />
+                    End="0,15.0433336281247" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.2300002644857"
-                    Point2="0,15.2300002644857"
-                    Point3="4,15.2300002644857" />
+                    Point1="0,15.0433336281247"
+                    Point2="0,19.0433336281247"
+                    Point3="4,19.0433336281247" />
                   <mssgle:LineSegment
-                    End="145.366672123803,15.2300002644857" />
+                    End="106.033340353436,19.0433336281247" />
                   <mssgle:CubicBezierSegment
-                    Point1="145.366672123803,15.2300002644857"
-                    Point2="149.366672123803,15.2300002644857"
-                    Point3="149.366672123803,19.2300002644857" />
+                    Point1="106.033340353436,19.0433336281247"
+                    Point2="110.033340353436,19.0433336281247"
+                    Point3="110.033340353436,23.0433336281247" />
                   <mssgle:LineSegment
-                    End="149.366672123803,22.9600005289713" />
+                    End="110.033340353436,30.5866672562493" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

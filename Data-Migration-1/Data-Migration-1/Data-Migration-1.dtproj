@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">UMESH</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAACAAAAAAAQZgAAAAEAACAAAADVuV7TKtVk8bYMb45sdX43CJLn3IiAVs01z+uEaNRtuAAAAAAOgAAAAAIAACAAAAComH6aA0HTs0l8Uka9cov4F7u09Ej9IYx/n0xc0xNrfZAAAAB2VW19iHvPrBjCdVUq2aEjHFkDWTKRF5DNO73F2uZ71gqPs2aZpqX4cYPXBG7DsG7iaLHy75dDh4kpZK7Sy+MZBLAxY6NfXi25RXeWmqlB+RFeC//pIeoRaJSEC33NJbNULY6FIq3/R3qp98kmY4JWi00RqELZmgd/SgM++z3Pe0M4vJ29ZWl4koLlLZ3xPshAAAAAScg+OW+3Ql9w/Lq9/ioskiaAGGTErwx1/4ae/NFSRWJvD+k0xu4bgu3PI94ZCTvP4THT566NRDRLmATpIZrIcw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAACAAAAAAAQZgAAAAEAACAAAADvRC2oAiEcpg/A4pddM5cCDW6eeB/9efcoPnGeQpt2vAAAAAAOgAAAAAIAACAAAAAnzvoncaaREM1+3hBqnRDqM36dplyIGkzLyo6ri5G1xJAAAAB/myxg4WN+mymwpZ5Z9AJosiavfqhqDEMM5fULQxwR/VS4qH7KHYWzpT1emWI0Cf8psKont6GodIQuPqQUkF9RGEzjv38YkWR25AAVITVB/rYTorrQPjxHgdWTxRnE7kvHcgQfuTy5lyYtNRdSVyAnqdcPr9B2RlEVGfEQ5JMbnHPCx9RY5CMFvg+x/NC+KhVAAAAAJ6+LrpMLAIzX/gRwyStcFtaA//tORPD7u2dvSJVdKFI22G3I3GHWpTNl5RzuTWKjCPdm7X/B71MRnPuZtSKBLw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -42,33 +42,47 @@
                 <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">64</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">84</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3045AF2A-AB23-4526-84A5-271C53837577}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{E22D5958-E6B0-4E39-AF78-4233FD083523}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
               </SSIS:Properties>
               <SSIS:Parameters>
-                <SSIS:Parameter SSIS:Name="Dev_DB_Connection_String">
+                <SSIS:Parameter SSIS:Name="DEV_DB_ConnectionString">
                   <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">{CCBC2442-737C-4187-B515-FE983CC3FA1A}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="ID">{4CEC552C-5619-4BF8-9530-33C90B4E5182}</SSIS:Property>
                     <SSIS:Property SSIS:Name="CreationName">
                     </SSIS:Property>
                     <SSIS:Property SSIS:Name="Description">
                     </SSIS:Property>
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">1</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Data Source=umesh;Initial Catalog=DEV-DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=umesh;User ID=umesh;Initial Catalog=DEV-DB;Provider=SQLNCLI11.1;Auto Translate=False;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="QA_DB_connection_String">
+                <SSIS:Parameter SSIS:Name="DEV_DB_Password">
                   <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">{EA38575D-A59A-455E-AD94-982F42F31E19}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="ID">{0095FA03-789C-4AA7-B32D-6A22D7C41DA6}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">1</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">1</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAACAAAAAAAQZgAAAAEAACAAAACUqhEJ5GfzmBSeaZqSTKMUtE8mXyTjccDgQ4nX2A9NSQAAAAAOgAAAAAIAACAAAAChyGH0wRrMZg1ed6GDidadbNmfedYuKBA7Y1Iwl2rFQIAAAACjhxmAJZyBCkh8WEWBLCrDduGYxNHWPDvicnWB/s8wjW0zQH5YBO+MLk7XYr0uRtzSc9sQ9+LJqIDGHbkV27bJvViZvbYY3PjGvhzT4JmQ/WnVzl7wjPRFm6hCkgyHZYet3KNZMylY5bwPIVqdOHmepQyS7RwVAQCBir4f36FhYkAAAAA1NuEH95iy8IMrsc+CB3OkbLCflKUHPdEVAhmcsIiWlteUDAn1CKEODEfx8t/kCC/11OrLUB/7yUts1sXfRDTZ</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="DEV_DB_ServerName">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{EE8D2B56-1B62-44B6-9B12-F961842433F8}</SSIS:Property>
                     <SSIS:Property SSIS:Name="CreationName">
                     </SSIS:Property>
                     <SSIS:Property SSIS:Name="Description">
@@ -76,7 +90,77 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">1</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Data Source=umesh;Initial Catalog=QA-DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">umesh</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="DEV_DB_UserName">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{0CEF3D19-13DB-43D5-9A5C-A9C48B669887}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">1</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">umesh</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="QA_DB_ConnectionString">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{0956349F-F3E7-42A9-8725-E2117979E903}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=umesh;User ID=umesh;Initial Catalog=QA-DB;Provider=SQLNCLI11.1;Auto Translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="QA_DB_Password">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{61FF7E82-2104-427B-A7F0-720FAD0A46A4}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">1</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAACAAAAAAAQZgAAAAEAACAAAAAQoKZwdtTwwSepQVCWBceeDZSYPEEQuSCBRMB3GFpLuQAAAAAOgAAAAAIAACAAAADLUMx1VTxVBpVdbEDSfKc0mEqKI2PZ93I5DrxClqxvs4AAAAAxQD7lSAL0y8OruQui0o4Jl5dHAO4nRK+9NHznCMvd9UCbqKi/g8vitFO9cJsmEnmglVOXdSibbqnxAZRtR/jPtDq7S8ZAeRkUmJz2FLlbruCczAeKuPIOYGeZQ0eY+uQbupBwrdYPq3Rk4vENN4YxnarBt3Bs60BN4ySw1EknKUAAAACn3IVPXuAAl2iCxKfITbNPOQUWhi18BlT+1PjgVv522rWhHHMco5I8ME4qbY6z96Ggz7XsNqzUBvaAII+NgL27</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="QA_DB_ServerName">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{B5358682-19C6-4A01-86BE-EEB4920AB837}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">umesh</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="QA_DB_UserName">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{649C33DD-C924-4994-AF76-18CBE265D73D}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">umesh</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -243,20 +327,6 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.umesh.DEV-DB.Password">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">1</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.umesh.DEV-DB.RetainSameConnection">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
@@ -270,35 +340,6 @@
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.umesh.DEV-DB.ServerName">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">umesh</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.umesh.DEV-DB.UserName">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.umesh.QA-DB.ConnectByProxy">
@@ -346,20 +387,6 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.umesh.QA-DB.Password">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">1</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.umesh.QA-DB.RetainSameConnection">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
@@ -373,35 +400,6 @@
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.umesh.QA-DB.ServerName">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">umesh</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.umesh.QA-DB.UserName">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
               </SSIS:Parameters>
