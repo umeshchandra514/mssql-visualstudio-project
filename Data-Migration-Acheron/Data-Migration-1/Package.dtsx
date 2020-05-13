@@ -11,8 +11,9 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="103"
-  DTS:VersionGUID="{09151E69-0EF7-4272-B2B0-605B3461A920}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="106"
+  DTS:VersionGUID="{EF8DA5AB-EE9C-406A-A5B4-2C580E4E7B67}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -34,8 +35,7 @@
           DTS:ConnectionString="Data Source=192.168.1.17;User ID=devops;Initial Catalog=Dev_DB_DevOps;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABrQDvPsOFwK+ahl0YBby9Kb643WiE9ZEGDoIagQYycJgAAAAAOgAAAAAIAACAAAACwruVZuiXi6wyOF+Bl6yglqUi3dXhGWqyEW7MeLj9TCTAAAAAMWLh75zRbjs/qvdZLToN4Fkrr4DywxCY1S5B+8RUu9Pw24MZFNh7dYhIr+8ID8URAAAAAKX0eBMNyqavqOdiz6L4yPCrTJtuiIiegINIT/9bbqTwRqNt07RoS6G08cpJMEkBjZyAncPyokhvy16FSPdfvCA</DTS:Password>
+            Sensitive="1"></DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,12 +46,13 @@
       DTS:ObjectName="DEV-DB-SMO">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Package::DEV_DB_SMO_ConnectionString]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Password">@[$Package::DEV_DB_Password]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <SMOServerConnectionManager
           ConnectionString="SqlServerName=192.168.1.17;UseWindowsAuthentication=False;UserName=devops;">
           <PassWord
-            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADUrcw4i3+oFNE5ZreaMKYjYTTvSGygY7d2PIJVLAxuBwAAAAAOgAAAAAIAACAAAABkhlzKQNkUO+LAa+nOpkf3zh/0hzaqAlC9WwumkxdNUTAAAADrWQJjg3WLWECZWtRlKbaigrzU5zoGkSi60OoqQTEdMikJmItkXlZYB5NK6DIMRVpAAAAAk6Ppnwi8Rr6lDUVyADBnw8v2uzM5ZRSfqUraFBRKn6lEZbdwGphDBd45mkMf7aTwqXpHWUGEQJT8eC6ZQG4RjA</PassWord>
+            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"></PassWord>
         </SMOServerConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -73,8 +74,7 @@
           DTS:ConnectionString="Data Source=192.168.1.17;User ID=devops;Initial Catalog=QA_DB_DevOps;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADytmtilnt3eVZhbX088IptgE4x+890lyxQnaAejIEe8gAAAAAOgAAAAAIAACAAAACCoSXcte3yooGx1DTTW4xyZHCvqzI0QhHxXkL0+mqifTAAAAA8Lt0kC3Sp0+3cKSg/YWMthy5kMh9o2h9J1FDwZToHvf6b79AC7ifMTGp7qFP2wahAAAAADMHT6sl9+eBj8ZIyNg9fPeyV5JIjrXXwloTyxV4xZfKhD0Yk+bksW3KfkMxn+JFJUoLE9xX4dGCmUjXEn7bBdg</DTS:Password>
+            Sensitive="1"></DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -93,8 +93,7 @@
         <SMOServerConnectionManager
           ConnectionString="SqlServerName=192.168.1.17;UseWindowsAuthentication=False;UserName=devops;">
           <PassWord
-            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAChgZKoVSXUkqmSMNwVn1Thsu7qQr4RFXl57CTySBuxggAAAAAOgAAAAAIAACAAAAA7WAYI/UDlLwSUbnsccCAHv4cbC5/llpqil07G/mOpqDAAAACWVZT5FZAtqhNcvtTf1XzqE8jX8/NdPKLJosCyOedhLJOYVsf81IU5tKQEZl5bekVAAAAAJ7hnF0fpnUwo4ozb02O9JcUOqcgAjSm7IbFNHzC4Cuf8DCNvI1jZgtb/J+pRmITuXOGvtq24Lay8X2pXuMa8ZA</PassWord>
+            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"></PassWord>
         </SMOServerConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1464,7 +1463,8 @@
           DestinationConnection="{9A6C32DB-08F7-4E4D-B240-B3C4768C67E4}"
           SourceDatabase="DEV_DB_DevOps"
           DestinationDatabase="QA_DB_DevOps"
-          TablesList="2,30,[dbo].[SHRDAcheronMPMCATEGORY],30,[dbo].[SHRDAcheronMPMPRIORITY]," />
+          TablesList="2,30,[dbo].[SHRDAcheronMPMCATEGORY],30,[dbo].[SHRDAcheronMPMPRIORITY],"
+          DropObjectsFirst="True" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -1567,9 +1567,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="46.033342896567,65.8200008099874"
+              EndConnector="46.0333428965668,65.8200008099874"
               Start="0,0"
-              End="46.033342896567,58.3200008099874">
+              End="46.0333428965668,58.3200008099874">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1580,13 +1580,13 @@
                     Point2="0,32.9100004049937"
                     Point3="4,32.9100004049937" />
                   <mssgle:LineSegment
-                    End="42.033342896567,32.9100004049937" />
+                    End="42.0333428965668,32.9100004049937" />
                   <mssgle:CubicBezierSegment
-                    Point1="42.033342896567,32.9100004049937"
-                    Point2="46.033342896567,32.9100004049937"
-                    Point3="46.033342896567,36.9100004049937" />
+                    Point1="42.0333428965668,32.9100004049937"
+                    Point2="46.0333428965668,32.9100004049937"
+                    Point3="46.0333428965668,36.9100004049937" />
                   <mssgle:LineSegment
-                    End="46.033342896567,58.3200008099874" />
+                    End="46.0333428965668,58.3200008099874" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1602,7 +1602,7 @@
     design-time-name="Package\Sequence Container\MPMCategory Data Transfer">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="168.8,41.6"
           Id="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA"
@@ -1646,7 +1646,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1668,7 +1670,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
