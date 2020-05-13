@@ -1,0 +1,1745 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/12/2020 1:54:03 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="UMESH"
+  DTS:CreatorName="UMESH\Umesh"
+  DTS:DTSID="{15D348D3-6912-4993-B488-5306138ECE63}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.94"
+  DTS:LocaleID="16393"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="84"
+  DTS:VersionGUID="{E22D5958-E6B0-4E39-AF78-4233FD083523}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[umesh]"
+      DTS:CreationName="SMOServer"
+      DTS:DTSID="{9A6C32DB-08F7-4E4D-B240-B3C4768C67E4}"
+      DTS:ObjectName="umesh">
+      <DTS:ObjectData>
+        <SMOServerConnectionManager
+          ConnectionString="SqlServerName=umesh;UseWindowsAuthentication=True;UserName=;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[umesh.DEV-DB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{078B3819-F686-4F98-B602-57D577CE175D}"
+      DTS:ObjectName="umesh.DEV-DB">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Package::DEV_DB_ConnectionString]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Password">@[$Package::DEV_DB_Password]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Package::DEV_DB_ServerName]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="UserName">@[$Package::DEV_DB_UserName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=umesh;User ID=umesh;Initial Catalog=DEV-DB;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAiibEbkglr6pyg7nfZ4fHSqbr4Cy4tArsOsc71bUjA8QAAAAAOgAAAAAIAACAAAAD5zULxgSNaG5ZZo3z4/KMlnGvbzuLcHlmzhja59TP07RAAAACxbY9SMPZinSTsxhjBV+RMQAAAAJT8qqaqWFlqNgS8abamvNDEF6xjoj4iLCT/PGHkXDcwoaUoVyXO6JXCB3yY1sIyT6owFWmZkJPBCUgE8sfLu50</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[umesh.QA-DB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2A9A4D1E-B679-4ED3-A314-189DF376DA7E}"
+      DTS:ObjectName="umesh.QA-DB">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Package::QA_DB_ConnectionString]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Password">@[$Package::QA_DB_Password]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Package::QA_DB_ServerName]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="UserName">@[$Package::QA_DB_UserName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=umesh;User ID=umesh;Initial Catalog=QA-DB;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADqnuYEQ6iBFSOtBP3DMOmFDLdgdF39NoB3zGFS2Rlx1gAAAAAOgAAAAAIAACAAAABd7i+2xwfBOjTLgTU22VTZfKwx5hgREAE9i04lOPfEEhAAAADihc5dGZxCXJ0jhJZfAyRkQAAAANCpiluXqyOnC2aVlSzNIJWLcdW5duHAfoNW/djwj2YOfqSEF0EKYMF+t6GSsX993nf851bUUBOPnr4Txh3/FfY</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{4CEC552C-5619-4BF8-9530-33C90B4E5182}"
+      DTS:ObjectName="DEV_DB_ConnectionString">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Data Source=umesh;User ID=umesh;Initial Catalog=DEV-DB;Provider=SQLNCLI11.1;Auto Translate=False;</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{0095FA03-789C-4AA7-B32D-6A22D7C41DA6}"
+      DTS:ObjectName="DEV_DB_Password"
+      DTS:Required="True"
+      DTS:Sensitive="True">
+      <DTS:Property
+        DTS:Name="ParameterValue">
+        <DTS:Property
+          DTS:DataType="8"
+          DTS:Name="ParameterValue"
+          Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACBSEW2VnlHcMWQHerslDU0FQGf4dwK8J79vqeO/gHMggAAAAAOgAAAAAIAACAAAAAIJvs6C1F613ZsN+qA+vYtLGCW6F0Kf0vh9tx8EWPOuBAAAABHNSDoARbdARjaUpEfDcKzQAAAAB3v6+tgbTQmkq4/hvmSEgegfcwGIYjIcMs6/eo0vrfG1xZEnwGDeWFbqVQIcFXrZ6TM1+zrZtt9YJtKZEHE0ug</DTS:Property>
+      </DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{EE8D2B56-1B62-44B6-9B12-F961842433F8}"
+      DTS:ObjectName="DEV_DB_ServerName"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">umesh</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{0CEF3D19-13DB-43D5-9A5C-A9C48B669887}"
+      DTS:ObjectName="DEV_DB_UserName"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">umesh</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{0956349F-F3E7-42A9-8725-E2117979E903}"
+      DTS:ObjectName="QA_DB_ConnectionString">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Data Source=umesh;User ID=umesh;Initial Catalog=QA-DB;Provider=SQLNCLI11.1;Auto Translate=False;</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{61FF7E82-2104-427B-A7F0-720FAD0A46A4}"
+      DTS:ObjectName="QA_DB_Password"
+      DTS:Sensitive="True">
+      <DTS:Property
+        DTS:Name="ParameterValue">
+        <DTS:Property
+          DTS:DataType="8"
+          DTS:Name="ParameterValue"
+          Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABJhyVn0biQakyTqHgkfrqC+RNTdVOhSDPUSPfvUkja3QAAAAAOgAAAAAIAACAAAADgvBhqele7l3hj0x1tzdoVFL7nBCLixCiMOaDTENZbdhAAAAA0kd7PviUbpXUNTH2m/WxlQAAAAEd2Z4NwiXttxfIzYl+6655DRYWx7a570z2MtL03OrrEi33wYskaSR0PjEQJPQ2DFFvbWDNExvBs130uDUexO1M</DTS:Property>
+      </DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{B5358682-19C6-4A01-86BE-EEB4920AB837}"
+      DTS:ObjectName="QA_DB_ServerName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">umesh</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{649C33DD-C924-4994-AF76-18CBE265D73D}"
+      DTS:ObjectName="QA_DB_UserName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">umesh</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{3AA33425-5EB9-4D7A-9235-15960120B3D7}"
+      DTS:ObjectName="QA_R_PO_CATEGORY_Id"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">1</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{5B3F9AA9-C68C-44B6-94B1-6A3E51E7898C}"
+      DTS:ObjectName="QA_S_ORGANIZATIONID"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">20</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{4950DA12-AC65-4EBA-9512-4B24CF5DC5A0}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\MPMCategory - Clear Data"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{C9623E80-C4B6-496B-8F06-6E6DF2448C4F}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="MPMCategory - Clear Data"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{2A9A4D1E-B679-4ED3-A314-189DF376DA7E}"
+              SQLTask:SqlStatementSource="truncate table dbo.SHRDAcheronMPMCATEGORY" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\MPMCategory Data Transfer"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{ED24487D-AC5E-4A36-BC87-A31637FC11FD}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="MPMCategory Data Transfer"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\MPMCategory Data Transfer\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\MPMCategory Data Transfer\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\Derived Column.Inputs[Derived Column Input].Columns[S_ORGANIZATIONID]"
+                          cachedDataType="i4"
+                          cachedName="S_ORGANIZATIONID"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[S_ORGANIZATIONID]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_I4)[REPLACE]((DT_WSTR,4)#{Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[S_ORGANIZATIONID]},(DT_WSTR,4)#{Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[S_ORGANIZATIONID]},(DT_WSTR,4)@[$Package::QA_S_ORGANIZATIONID])</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_I4)REPLACE((DT_WSTR,4)S_ORGANIZATIONID,(DT_WSTR,4)S_ORGANIZATIONID,(DT_WSTR,4)@[$Package::QA_S_ORGANIZATIONID])</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\MPMCategory Data Transfer\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Sequence Container\MPMCategory Data Transfer\Derived Column.Inputs[Derived Column Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\MPMCategory Data Transfer\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Sequence Container\MPMCategory Data Transfer\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="MPMCategory - DEV"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[SHRDAcheronMPMCATEGORY]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[umesh.DEV-DB]"
+                      connectionManagerRefId="Package.ConnectionManagers[umesh.DEV-DB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[Id]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[Id]"
+                          name="Id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[NAME]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].ExternalColumns[NAME]"
+                          length="64"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[NAME]"
+                          name="NAME"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[SEQUENCE]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].ExternalColumns[SEQUENCE]"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[SEQUENCE]"
+                          name="SEQUENCE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[DESCRIPTION]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].ExternalColumns[DESCRIPTION]"
+                          length="512"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[DESCRIPTION]"
+                          name="DESCRIPTION"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[S_ITEM_STATUS]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].ExternalColumns[S_ITEM_STATUS]"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[S_ITEM_STATUS]"
+                          name="S_ITEM_STATUS"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[S_ORGANIZATIONID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].ExternalColumns[S_ORGANIZATIONID]"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[S_ORGANIZATIONID]"
+                          name="S_ORGANIZATIONID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[GROUP]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].ExternalColumns[GROUP]"
+                          length="64"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[GROUP]"
+                          name="GROUP"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                          dataType="i8"
+                          name="Id" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].ExternalColumns[NAME]"
+                          dataType="wstr"
+                          length="64"
+                          name="NAME" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].ExternalColumns[SEQUENCE]"
+                          dataType="i4"
+                          name="SEQUENCE" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].ExternalColumns[DESCRIPTION]"
+                          dataType="wstr"
+                          length="512"
+                          name="DESCRIPTION" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].ExternalColumns[S_ITEM_STATUS]"
+                          dataType="i4"
+                          name="S_ITEM_STATUS" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].ExternalColumns[S_ORGANIZATIONID]"
+                          dataType="i4"
+                          name="S_ORGANIZATIONID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].ExternalColumns[GROUP]"
+                          dataType="wstr"
+                          length="64"
+                          name="GROUP" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Error Output].Columns[Id]"
+                          dataType="i8"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Error Output].Columns[Id]"
+                          name="Id" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Error Output].Columns[NAME]"
+                          dataType="wstr"
+                          length="64"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Error Output].Columns[NAME]"
+                          name="NAME" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Error Output].Columns[SEQUENCE]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Error Output].Columns[SEQUENCE]"
+                          name="SEQUENCE" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Error Output].Columns[DESCRIPTION]"
+                          dataType="wstr"
+                          length="512"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Error Output].Columns[DESCRIPTION]"
+                          name="DESCRIPTION" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Error Output].Columns[S_ITEM_STATUS]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Error Output].Columns[S_ITEM_STATUS]"
+                          name="S_ITEM_STATUS" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Error Output].Columns[GROUP]"
+                          dataType="wstr"
+                          length="64"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Error Output].Columns[GROUP]"
+                          name="GROUP" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Error Output].Columns[S_ORGANIZATIONID]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Error Output].Columns[S_ORGANIZATIONID]"
+                          name="S_ORGANIZATIONID" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="MPMCategory - QA"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[SHRDAcheronMPMCATEGORY]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[umesh.QA-DB]"
+                      connectionManagerRefId="Package.ConnectionManagers[umesh.QA-DB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input].Columns[Id]"
+                          cachedDataType="i8"
+                          cachedName="Id"
+                          externalMetadataColumnId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[Id]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input].Columns[NAME]"
+                          cachedDataType="wstr"
+                          cachedLength="64"
+                          cachedName="NAME"
+                          externalMetadataColumnId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input].ExternalColumns[NAME]"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[NAME]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input].Columns[SEQUENCE]"
+                          cachedDataType="i4"
+                          cachedName="SEQUENCE"
+                          externalMetadataColumnId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input].ExternalColumns[SEQUENCE]"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[SEQUENCE]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input].Columns[DESCRIPTION]"
+                          cachedDataType="wstr"
+                          cachedLength="512"
+                          cachedName="DESCRIPTION"
+                          externalMetadataColumnId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input].ExternalColumns[DESCRIPTION]"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[DESCRIPTION]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input].Columns[S_ITEM_STATUS]"
+                          cachedDataType="i4"
+                          cachedName="S_ITEM_STATUS"
+                          externalMetadataColumnId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input].ExternalColumns[S_ITEM_STATUS]"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[S_ITEM_STATUS]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input].Columns[S_ORGANIZATIONID]"
+                          cachedDataType="i4"
+                          cachedName="S_ORGANIZATIONID"
+                          externalMetadataColumnId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input].ExternalColumns[S_ORGANIZATIONID]"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[S_ORGANIZATIONID]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input].Columns[GROUP]"
+                          cachedDataType="wstr"
+                          cachedLength="64"
+                          cachedName="GROUP"
+                          externalMetadataColumnId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input].ExternalColumns[GROUP]"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[GROUP]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                          dataType="i8"
+                          name="Id" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input].ExternalColumns[S_ITEM_STATUS]"
+                          dataType="i4"
+                          name="S_ITEM_STATUS" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input].ExternalColumns[NAME]"
+                          dataType="wstr"
+                          length="64"
+                          name="NAME" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input].ExternalColumns[DESCRIPTION]"
+                          dataType="wstr"
+                          length="512"
+                          name="DESCRIPTION" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input].ExternalColumns[SEQUENCE]"
+                          dataType="i4"
+                          name="SEQUENCE" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input].ExternalColumns[GROUP]"
+                          dataType="wstr"
+                          length="64"
+                          name="GROUP" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input].ExternalColumns[S_ORGANIZATIONID]"
+                          dataType="i4"
+                          name="S_ORGANIZATIONID" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\MPMCategory Data Transfer.Paths[Derived Column Output]"
+                  endId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Sequence Container\MPMCategory Data Transfer\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Sequence Container\MPMCategory Data Transfer.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence Container\MPMCategory Data Transfer\Derived Column.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\MPMPriority - Clear Data"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{a8ee13ab-ba78-4d2b-8610-563d1b31b664}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="MPMPriority - Clear Data"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{2A9A4D1E-B679-4ED3-A314-189DF376DA7E}"
+              SQLTask:SqlStatementSource="truncate table dbo.SHRDAcheronMPMPRIORITY" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\MPMPriority Data Transfer"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{04395712-bf20-4713-a738-4a09013d025e}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="MPMPriority Data Transfer"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\MPMPriority Data Transfer\Derived Column 1"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column 1"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\MPMPriority Data Transfer\Derived Column 1.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\Derived Column 1.Inputs[Derived Column Input].Columns[S_ORGANIZATIONID]"
+                          cachedDataType="i4"
+                          cachedName="S_ORGANIZATIONID"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[S_ORGANIZATIONID]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_I4)[REPLACE]((DT_WSTR,4)#{Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[S_ORGANIZATIONID]},(DT_WSTR,4)#{Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[S_ORGANIZATIONID]},(DT_WSTR,4)@[$Package::QA_S_ORGANIZATIONID])</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_I4)REPLACE((DT_WSTR,4)S_ORGANIZATIONID,(DT_WSTR,4)S_ORGANIZATIONID,(DT_WSTR,4)@[$Package::QA_S_ORGANIZATIONID])</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\Derived Column 1.Inputs[Derived Column Input].Columns[R_PO_CATEGORY_Id]"
+                          cachedDataType="i8"
+                          cachedName="R_PO_CATEGORY_Id"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[R_PO_CATEGORY_Id]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_I4)[REPLACE]((DT_WSTR,4)#{Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[R_PO_CATEGORY_Id]},(DT_WSTR,4)#{Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[R_PO_CATEGORY_Id]},(DT_WSTR,4)@[$Package::QA_R_PO_CATEGORY_Id])</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_I4)REPLACE((DT_WSTR,4)R_PO_CATEGORY_Id,(DT_WSTR,4)R_PO_CATEGORY_Id,(DT_WSTR,4)@[$Package::QA_R_PO_CATEGORY_Id])</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\MPMPriority Data Transfer\Derived Column 1.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Sequence Container\MPMPriority Data Transfer\Derived Column 1.Inputs[Derived Column Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\MPMPriority Data Transfer\Derived Column 1.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Sequence Container\MPMPriority Data Transfer\Derived Column 1.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="MPMPriority - DEV"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[SHRDAcheronMPMPRIORITY]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[umesh.DEV-DB]"
+                      connectionManagerRefId="Package.ConnectionManagers[umesh.DEV-DB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[Id]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[Id]"
+                          name="Id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[NAME]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].ExternalColumns[NAME]"
+                          length="64"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[NAME]"
+                          name="NAME"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[SEQUENCE]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].ExternalColumns[SEQUENCE]"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[SEQUENCE]"
+                          name="SEQUENCE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[DESCRIPTION]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].ExternalColumns[DESCRIPTION]"
+                          length="512"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[DESCRIPTION]"
+                          name="DESCRIPTION"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[S_ITEM_STATUS]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].ExternalColumns[S_ITEM_STATUS]"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[S_ITEM_STATUS]"
+                          name="S_ITEM_STATUS"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[S_ORGANIZATIONID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].ExternalColumns[S_ORGANIZATIONID]"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[S_ORGANIZATIONID]"
+                          name="S_ORGANIZATIONID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[APPLICATION_ID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].ExternalColumns[APPLICATION_ID]"
+                          length="64"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[APPLICATION_ID]"
+                          name="APPLICATION_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[ICON]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].ExternalColumns[ICON]"
+                          length="512"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[ICON]"
+                          name="ICON"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[DISPLAY_NAME]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].ExternalColumns[DISPLAY_NAME]"
+                          length="150"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[DISPLAY_NAME]"
+                          name="DISPLAY_NAME"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[IS_DEFAULT]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].ExternalColumns[IS_DEFAULT]"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[IS_DEFAULT]"
+                          name="IS_DEFAULT"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[R_PO_CATEGORY_Id]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].ExternalColumns[R_PO_CATEGORY_Id]"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[R_PO_CATEGORY_Id]"
+                          name="R_PO_CATEGORY_Id"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                          dataType="i8"
+                          name="Id" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].ExternalColumns[NAME]"
+                          dataType="wstr"
+                          length="64"
+                          name="NAME" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].ExternalColumns[SEQUENCE]"
+                          dataType="i4"
+                          name="SEQUENCE" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].ExternalColumns[DESCRIPTION]"
+                          dataType="wstr"
+                          length="512"
+                          name="DESCRIPTION" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].ExternalColumns[S_ITEM_STATUS]"
+                          dataType="i4"
+                          name="S_ITEM_STATUS" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].ExternalColumns[S_ORGANIZATIONID]"
+                          dataType="i4"
+                          name="S_ORGANIZATIONID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].ExternalColumns[APPLICATION_ID]"
+                          dataType="wstr"
+                          length="64"
+                          name="APPLICATION_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].ExternalColumns[ICON]"
+                          dataType="wstr"
+                          length="512"
+                          name="ICON" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].ExternalColumns[DISPLAY_NAME]"
+                          dataType="wstr"
+                          length="150"
+                          name="DISPLAY_NAME" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].ExternalColumns[IS_DEFAULT]"
+                          dataType="bool"
+                          name="IS_DEFAULT" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].ExternalColumns[R_PO_CATEGORY_Id]"
+                          dataType="i8"
+                          name="R_PO_CATEGORY_Id" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[Id]"
+                          dataType="i8"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[Id]"
+                          name="Id" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[APPLICATION_ID]"
+                          dataType="wstr"
+                          length="64"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[APPLICATION_ID]"
+                          name="APPLICATION_ID" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[NAME]"
+                          dataType="wstr"
+                          length="64"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[NAME]"
+                          name="NAME" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[SEQUENCE]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[SEQUENCE]"
+                          name="SEQUENCE" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[DESCRIPTION]"
+                          dataType="wstr"
+                          length="512"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[DESCRIPTION]"
+                          name="DESCRIPTION" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[ICON]"
+                          dataType="wstr"
+                          length="512"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[ICON]"
+                          name="ICON" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[DISPLAY_NAME]"
+                          dataType="wstr"
+                          length="150"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[DISPLAY_NAME]"
+                          name="DISPLAY_NAME" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[IS_DEFAULT]"
+                          dataType="bool"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[IS_DEFAULT]"
+                          name="IS_DEFAULT" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[S_ITEM_STATUS]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[S_ITEM_STATUS]"
+                          name="S_ITEM_STATUS" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[R_PO_CATEGORY_Id]"
+                          dataType="i8"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[R_PO_CATEGORY_Id]"
+                          name="R_PO_CATEGORY_Id" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[S_ORGANIZATIONID]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[S_ORGANIZATIONID]"
+                          name="S_ORGANIZATIONID" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="MPMPriority - QA"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[SHRDAcheronMPMPRIORITY]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[umesh.QA-DB]"
+                      connectionManagerRefId="Package.ConnectionManagers[umesh.QA-DB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].Columns[Id]"
+                          cachedDataType="i8"
+                          cachedName="Id"
+                          externalMetadataColumnId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[Id]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].Columns[NAME]"
+                          cachedDataType="wstr"
+                          cachedLength="64"
+                          cachedName="NAME"
+                          externalMetadataColumnId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].ExternalColumns[NAME]"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[NAME]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].Columns[SEQUENCE]"
+                          cachedDataType="i4"
+                          cachedName="SEQUENCE"
+                          externalMetadataColumnId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].ExternalColumns[SEQUENCE]"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[SEQUENCE]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].Columns[DESCRIPTION]"
+                          cachedDataType="wstr"
+                          cachedLength="512"
+                          cachedName="DESCRIPTION"
+                          externalMetadataColumnId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].ExternalColumns[DESCRIPTION]"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[DESCRIPTION]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].Columns[S_ITEM_STATUS]"
+                          cachedDataType="i4"
+                          cachedName="S_ITEM_STATUS"
+                          externalMetadataColumnId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].ExternalColumns[S_ITEM_STATUS]"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[S_ITEM_STATUS]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].Columns[S_ORGANIZATIONID]"
+                          cachedDataType="i4"
+                          cachedName="S_ORGANIZATIONID"
+                          externalMetadataColumnId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].ExternalColumns[S_ORGANIZATIONID]"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[S_ORGANIZATIONID]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].Columns[APPLICATION_ID]"
+                          cachedDataType="wstr"
+                          cachedLength="64"
+                          cachedName="APPLICATION_ID"
+                          externalMetadataColumnId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].ExternalColumns[APPLICATION_ID]"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[APPLICATION_ID]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].Columns[ICON]"
+                          cachedDataType="wstr"
+                          cachedLength="512"
+                          cachedName="ICON"
+                          externalMetadataColumnId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].ExternalColumns[ICON]"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[ICON]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].Columns[DISPLAY_NAME]"
+                          cachedDataType="wstr"
+                          cachedLength="150"
+                          cachedName="DISPLAY_NAME"
+                          externalMetadataColumnId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].ExternalColumns[DISPLAY_NAME]"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[DISPLAY_NAME]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].Columns[IS_DEFAULT]"
+                          cachedDataType="bool"
+                          cachedName="IS_DEFAULT"
+                          externalMetadataColumnId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].ExternalColumns[IS_DEFAULT]"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[IS_DEFAULT]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].Columns[R_PO_CATEGORY_Id]"
+                          cachedDataType="i8"
+                          cachedName="R_PO_CATEGORY_Id"
+                          externalMetadataColumnId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].ExternalColumns[R_PO_CATEGORY_Id]"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[R_PO_CATEGORY_Id]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                          dataType="i8"
+                          name="Id" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].ExternalColumns[APPLICATION_ID]"
+                          dataType="wstr"
+                          length="64"
+                          name="APPLICATION_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].ExternalColumns[NAME]"
+                          dataType="wstr"
+                          length="64"
+                          name="NAME" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].ExternalColumns[SEQUENCE]"
+                          dataType="i4"
+                          name="SEQUENCE" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].ExternalColumns[DESCRIPTION]"
+                          dataType="wstr"
+                          length="512"
+                          name="DESCRIPTION" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].ExternalColumns[ICON]"
+                          dataType="wstr"
+                          length="512"
+                          name="ICON" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].ExternalColumns[DISPLAY_NAME]"
+                          dataType="wstr"
+                          length="150"
+                          name="DISPLAY_NAME" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].ExternalColumns[IS_DEFAULT]"
+                          dataType="bool"
+                          name="IS_DEFAULT" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].ExternalColumns[S_ITEM_STATUS]"
+                          dataType="i4"
+                          name="S_ITEM_STATUS" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].ExternalColumns[R_PO_CATEGORY_Id]"
+                          dataType="i8"
+                          name="R_PO_CATEGORY_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input].ExternalColumns[S_ORGANIZATIONID]"
+                          dataType="i4"
+                          name="S_ORGANIZATIONID" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\MPMPriority Data Transfer.Paths[Derived Column Output]"
+                  endId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Sequence Container\MPMPriority Data Transfer\Derived Column 1.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Sequence Container\MPMPriority Data Transfer.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence Container\MPMPriority Data Transfer\Derived Column 1.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{452DC4FA-1C76-40C1-9468-6B1D1BA84A0F}"
+          DTS:From="Package\Sequence Container\MPMCategory - Clear Data"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sequence Container\MPMCategory Data Transfer" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{e4ad7430-8f11-4f93-a966-cb15aa7ea473}"
+          DTS:From="Package\Sequence Container\MPMPriority - Clear Data"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Sequence Container\MPMPriority Data Transfer" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Transfer SQL Server Objects Task"
+      DTS:CreationName="Microsoft.TransferSqlServerObjectsTask"
+      DTS:Description="Transfer SQL Server Objects Task"
+      DTS:DTSID="{4953D384-44F7-4955-85BC-3EFA2E9E50D8}"
+      DTS:ExecutableType="Microsoft.TransferSqlServerObjectsTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transfer SQL Server Objects Task"
+      DTS:TaskContact="Transfer Objects Task; Microsoft Corporation; SQL Server 2019; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <TransferSqlServerObjectsTaskData
+          SourceConnection="{9A6C32DB-08F7-4E4D-B240-B3C4768C67E4}"
+          DestinationConnection="{9A6C32DB-08F7-4E4D-B240-B3C4768C67E4}"
+          SourceDatabase="DEV-DB"
+          DestinationDatabase="QA-DB"
+          TablesList="2,30,[dbo].[SHRDAcheronMPMCATEGORY],30,[dbo].[SHRDAcheronMPMPRIORITY],"
+          DropObjectsFirst="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{A8178402-94B0-4A81-B844-330B4BAE920D}"
+      DTS:From="Package\Transfer SQL Server Objects Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Sequence Container" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="203.2,41.6"
+          Id="Package\Sequence Container\MPMCategory - Clear Data"
+          TopLeft="43.1999926884973,80.1600018513998" />
+        <NodeLayout
+          Size="211.2,41.6"
+          Id="Package\Sequence Container\MPMCategory Data Transfer"
+          TopLeft="43.4666482819462,184.213335884519" />
+        <NodeLayout
+          Size="193.6,41.6"
+          Id="Package\Sequence Container\MPMPriority - Clear Data"
+          TopLeft="308.933326525158,76.6933351571825" />
+        <NodeLayout
+          Size="201.6,41.6"
+          Id="Package\Sequence Container\MPMPriority Data Transfer"
+          TopLeft="306.533315557905,186.986669239892" />
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="146.933320485222,121.7600018514">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62.4533340331188"
+              Start="0,0"
+              End="0,54.9533340331188">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.9533340331188" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="406.533321041531,118.293335157182">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68.6933340827095"
+              Start="0,0"
+              End="0,61.1933340827095">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.1933340827095" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="800,313.6"
+          Size="800,356.8"
+          Id="Package\Sequence Container"
+          TopLeft="54.8333313730028,112.966667520735" />
+        <NodeLayout
+          Size="237.6,41.6"
+          Id="Package\Transfer SQL Server Objects Task"
+          TopLeft="225.999991019567,33.2800002644857" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="344.799991019567,74.8800002644857">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="110.033340353436,38.0866672562493"
+              Start="0,0"
+              End="110.033340353436,30.5866672562493">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.0433336281247" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.0433336281247"
+                    Point2="0,19.0433336281247"
+                    Point3="4,19.0433336281247" />
+                  <mssgle:LineSegment
+                    End="106.033340353436,19.0433336281247" />
+                  <mssgle:CubicBezierSegment
+                    Point1="106.033340353436,19.0433336281247"
+                    Point2="110.033340353436,19.0433336281247"
+                    Point3="110.033340353436,23.0433336281247" />
+                  <mssgle:LineSegment
+                    End="110.033340353436,30.5866672562493" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Sequence Container\MPMCategory Data Transfer">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="168.8,41.6"
+          Id="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA"
+          TopLeft="130.39999888738,318.293332842933" />
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV"
+          TopLeft="132.533332803514,159.840000297546" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Sequence Container\MPMCategory Data Transfer\Derived Column"
+          TopLeft="131.999999364217,245.6" />
+        <EdgeLayout
+          Id="Package\Sequence Container\MPMCategory Data Transfer.Paths[OLE DB Source Output]"
+          TopLeft="220.133332803514,201.440000297546">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11.733333439297,44.159999702454"
+              Start="0,0"
+              End="-11.733333439297,36.659999702454">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.079999851227" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.079999851227"
+                    Point2="0,22.079999851227"
+                    Point3="-4,22.079999851227" />
+                  <mssgle:LineSegment
+                    End="-7.73333343929701,22.079999851227" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.73333343929701,22.079999851227"
+                    Point2="-11.733333439297,22.079999851227"
+                    Point3="-11.733333439297,26.079999851227" />
+                  <mssgle:LineSegment
+                    End="-11.733333439297,36.659999702454" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\MPMCategory Data Transfer.Paths[Derived Column Output]"
+          TopLeft="211.599999125798,287.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.093332842933"
+              Start="0,0"
+              End="0,23.593332842933">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.593332842933" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence Container\MPMPriority Data Transfer">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="159.2,41.6"
+          Id="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA"
+          TopLeft="129.199985933304,271.466669256422" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Sequence Container\MPMPriority Data Transfer\Derived Column 1"
+          TopLeft="132.266671805911,188.293332925585" />
+        <NodeLayout
+          Size="165.6,41.6"
+          Id="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV"
+          TopLeft="131.199985853832,107.520001057943" />
+        <EdgeLayout
+          Id="Package\Sequence Container\MPMPriority Data Transfer.Paths[OLE DB Source Output]"
+          TopLeft="213.533328829871,149.120001057943">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.1733318676419"
+              Start="0,0"
+              End="0,31.6733318676419">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.6733318676419" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\MPMPriority Data Transfer.Paths[Derived Column Output]"
+          TopLeft="210.933328869607,229.893332925585">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.5733363308371"
+              Start="0,0"
+              End="0,34.0733363308371">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.0733363308371" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="s"
+          ParentId="Package\Sequence Container\MPMPriority Data Transfer"
+          FontInfo="{assembly:Null}"
+          Size="33.6,40"
+          Id="106314f4-a0bb-497d-919b-b97a1cfe3361"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
