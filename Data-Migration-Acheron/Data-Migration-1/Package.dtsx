@@ -12,26 +12,16 @@
   DTS:ObjectName="Package"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="90"
-  DTS:VersionGUID="{A4663E23-9207-422D-BAD7-E60D86C48652}">
+  DTS:VersionBuild="92"
+  DTS:VersionGUID="{94D8FB24-35B9-409D-8B36-2A86F436AEBB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[umesh]"
-      DTS:CreationName="SMOServer"
-      DTS:DTSID="{9A6C32DB-08F7-4E4D-B240-B3C4768C67E4}"
-      DTS:ObjectName="umesh">
-      <DTS:ObjectData>
-        <SMOServerConnectionManager
-          ConnectionString="SqlServerName=umesh;UseWindowsAuthentication=True;UserName=;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[umesh.DEV-DB]"
+      DTS:refId="Package.ConnectionManagers[DEV-DB]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{078B3819-F686-4F98-B602-57D577CE175D}"
-      DTS:ObjectName="umesh.DEV-DB">
+      DTS:ObjectName="DEV-DB">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Package::DEV_DB_ConnectionString]</DTS:PropertyExpression>
       <DTS:PropertyExpression
@@ -50,10 +40,10 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[umesh.QA-DB]"
+      DTS:refId="Package.ConnectionManagers[QA-DB]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{2A9A4D1E-B679-4ED3-A314-189DF376DA7E}"
-      DTS:ObjectName="umesh.QA-DB">
+      DTS:ObjectName="QA-DB">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Package::QA_DB_ConnectionString]</DTS:PropertyExpression>
       <DTS:PropertyExpression
@@ -69,6 +59,25 @@
             DTS:Name="Password"
             Sensitive="1"></DTS:Password>
         </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[umesh]"
+      DTS:CreationName="SMOServer"
+      DTS:DTSID="{9A6C32DB-08F7-4E4D-B240-B3C4768C67E4}"
+      DTS:ObjectName="umesh">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Package::QA_SMO_ConnectionString]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Password">@[$Package::QA_DB_Password]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="UserName">@[$Package::QA_DB_UserName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SMOServerConnectionManager
+          ConnectionString="SqlServerName=192.168.1.17;UseWindowsAuthentication=False;UserName=devops;">
+          <PassWord
+            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"></PassWord>
+        </SMOServerConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -157,6 +166,15 @@
       <DTS:Property
         DTS:DataType="3"
         DTS:Name="ParameterValue">1</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{1A87ACF1-1260-4A10-B629-DAD2B522D118}"
+      DTS:ObjectName="QA_SMO_ConnectionString">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">SqlServerName=192.168.1.17;UseWindowsAuthentication=False;UserName=devops;</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -337,8 +355,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[umesh.DEV-DB]"
-                      connectionManagerRefId="Package.ConnectionManagers[umesh.DEV-DB]"
+                      connectionManagerID="Package.ConnectionManagers[DEV-DB]"
+                      connectionManagerRefId="Package.ConnectionManagers[DEV-DB]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -568,8 +586,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[umesh.QA-DB]"
-                      connectionManagerRefId="Package.ConnectionManagers[umesh.QA-DB]"
+                      connectionManagerID="Package.ConnectionManagers[QA-DB]"
+                      connectionManagerRefId="Package.ConnectionManagers[QA-DB]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -883,8 +901,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[umesh.DEV-DB]"
-                      connectionManagerRefId="Package.ConnectionManagers[umesh.DEV-DB]"
+                      connectionManagerID="Package.ConnectionManagers[DEV-DB]"
+                      connectionManagerRefId="Package.ConnectionManagers[DEV-DB]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1192,8 +1210,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[umesh.QA-DB]"
-                      connectionManagerRefId="Package.ConnectionManagers[umesh.QA-DB]"
+                      connectionManagerID="Package.ConnectionManagers[QA-DB]"
+                      connectionManagerRefId="Package.ConnectionManagers[QA-DB]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1650,7 +1668,7 @@
     design-time-name="Package\Sequence Container\MPMPriority Data Transfer">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="159.2,41.6"
           Id="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA"
@@ -1682,7 +1700,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1704,14 +1724,16 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="s"
           ParentId="Package\Sequence Container\MPMPriority Data Transfer"
           FontInfo="{assembly:Null}"
-          Size="33.6,40"
+          Size="33.6,NaN"
           Id="106314f4-a0bb-497d-919b-b97a1cfe3361"
           TopLeft="5.5,5.5" />
       </GraphLayout>
