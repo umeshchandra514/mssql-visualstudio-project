@@ -12,8 +12,8 @@
   DTS:ObjectName="Package"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="109"
-  DTS:VersionGUID="{B65E4EFE-AE89-49D6-BBCF-82C61A9CFE3B}">
+  DTS:VersionBuild="114"
+  DTS:VersionGUID="{5771D16A-4E22-442B-AE89-7BA209C8D5F3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,13 +23,13 @@
       DTS:DTSID="{078B3819-F686-4F98-B602-57D577CE175D}"
       DTS:ObjectName="DEV-DB">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Package::DEV_DB_ConnectionString]</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[User::DEV_DB_ConnectionString]</DTS:PropertyExpression>
       <DTS:PropertyExpression
-        DTS:Name="Password">@[$Package::DEV_DB_Password]</DTS:PropertyExpression>
+        DTS:Name="Password">@[User::DEV_DB_Password]</DTS:PropertyExpression>
       <DTS:PropertyExpression
-        DTS:Name="ServerName">@[$Package::DEV_DB_ServerName]</DTS:PropertyExpression>
+        DTS:Name="ServerName">@[User::DEV_DB_ServerName]</DTS:PropertyExpression>
       <DTS:PropertyExpression
-        DTS:Name="UserName">@[$Package::DEV_DB_UserName]</DTS:PropertyExpression>
+        DTS:Name="UserName">@[User::DEV_DB_UserName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=192.168.1.17;User ID=devops;Initial Catalog=Dev_DB_DevOps;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
@@ -45,9 +45,11 @@
       DTS:DTSID="{51d5f14f-d91d-4c8e-a7f9-bb45332585d0}"
       DTS:ObjectName="DEV-DB-SMO">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Package::DEV_DB_SMO_ConnectionString]</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[User::DEV_DB_SMO_ConnectionString]</DTS:PropertyExpression>
       <DTS:PropertyExpression
         DTS:Name="Password">@[User::DEV_DB_Password]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="UserName">@[User::DEV_DB_UserName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <SMOServerConnectionManager
           ConnectionString="SqlServerName=192.168.1.17;UseWindowsAuthentication=False;UserName=devops;">
@@ -62,13 +64,13 @@
       DTS:DTSID="{2A9A4D1E-B679-4ED3-A314-189DF376DA7E}"
       DTS:ObjectName="QA-DB">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Package::QA_DB_ConnectionString]</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[User::QA_DB_ConnectionString]</DTS:PropertyExpression>
       <DTS:PropertyExpression
-        DTS:Name="Password">@[$Package::QA_DB_Password]</DTS:PropertyExpression>
+        DTS:Name="Password">@[User::QA_DB_Password]</DTS:PropertyExpression>
       <DTS:PropertyExpression
-        DTS:Name="ServerName">@[$Package::QA_DB_ServerName]</DTS:PropertyExpression>
+        DTS:Name="ServerName">@[User::QA_DB_ServerName]</DTS:PropertyExpression>
       <DTS:PropertyExpression
-        DTS:Name="UserName">@[$Package::QA_DB_UserName]</DTS:PropertyExpression>
+        DTS:Name="UserName">@[User::QA_DB_UserName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=192.168.1.17;User ID=devops;Initial Catalog=QA_DB_DevOps;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
@@ -84,11 +86,11 @@
       DTS:DTSID="{9A6C32DB-08F7-4E4D-B240-B3C4768C67E4}"
       DTS:ObjectName="QA-DB-SMO">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Package::QA_DB_SMO_ConnectionString]</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[User::QA_DB_SMO_ConnectionString]</DTS:PropertyExpression>
       <DTS:PropertyExpression
-        DTS:Name="Password">@[$Package::QA_DB_Password]</DTS:PropertyExpression>
+        DTS:Name="Password">@[User::QA_DB_Password]</DTS:PropertyExpression>
       <DTS:PropertyExpression
-        DTS:Name="UserName">@[$Package::QA_DB_UserName]</DTS:PropertyExpression>
+        DTS:Name="UserName">@[User::QA_DB_UserName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <SMOServerConnectionManager
           ConnectionString="SqlServerName=192.168.1.17;UseWindowsAuthentication=False;UserName=devops;">
@@ -97,133 +99,17 @@
         </SMOServerConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[umesh.umesh]"
-      DTS:CreationName="SMOServer"
-      DTS:DTSID="{BAD4F463-9C95-4E54-9380-911CEC70E60A}"
-      DTS:ObjectName="umesh.umesh">
-      <DTS:ObjectData>
-        <SMOServerConnectionManager
-          ConnectionString="SqlServerName=umesh;UseWindowsAuthentication=False;UserName=umesh;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
-  <DTS:PackageParameters>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{4CEC552C-5619-4BF8-9530-33C90B4E5182}"
-      DTS:ObjectName="DEV_DB_ConnectionString">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">Data Source=192.168.1.17;User ID=devops;Initial Catalog=Dev_DB_DevOps;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;</DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{0095FA03-789C-4AA7-B32D-6A22D7C41DA6}"
-      DTS:ObjectName="DEV_DB_Password"
-      DTS:Required="True">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">Y8SlNYl7bLpzPkGIyB2j</DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{EE8D2B56-1B62-44B6-9B12-F961842433F8}"
-      DTS:ObjectName="DEV_DB_ServerName"
-      DTS:Required="True">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">192.168.1.17</DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{76151462-8211-458C-BCAB-A51CD236D468}"
-      DTS:ObjectName="DEV_DB_SMO_ConnectionString">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">SqlServerName=192.168.1.17;UseWindowsAuthentication=False;UserName=devops;</DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{0CEF3D19-13DB-43D5-9A5C-A9C48B669887}"
-      DTS:ObjectName="DEV_DB_UserName"
-      DTS:Required="True">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">devops</DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{0956349F-F3E7-42A9-8725-E2117979E903}"
-      DTS:ObjectName="QA_DB_ConnectionString">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">Data Source=192.168.1.17;User ID=devops;Initial Catalog=QA_DB_DevOps;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;</DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{61FF7E82-2104-427B-A7F0-720FAD0A46A4}"
-      DTS:ObjectName="QA_DB_Password">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">Y8SlNYl7bLpzPkGIyB2j</DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{B5358682-19C6-4A01-86BE-EEB4920AB837}"
-      DTS:ObjectName="QA_DB_ServerName">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">192.168.1.17</DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{7BF79807-5C69-4A2D-9B4C-D2420A268FCE}"
-      DTS:ObjectName="QA_DB_SMO_ConnectionString">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">SqlServerName=192.168.1.17;UseWindowsAuthentication=False;UserName=devops;</DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{649C33DD-C924-4994-AF76-18CBE265D73D}"
-      DTS:ObjectName="QA_DB_UserName">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">devops</DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="3"
-      DTS:DTSID="{3AA33425-5EB9-4D7A-9235-15960120B3D7}"
-      DTS:ObjectName="QA_R_PO_CATEGORY_Id"
-      DTS:Required="True">
-      <DTS:Property
-        DTS:DataType="3"
-        DTS:Name="ParameterValue">1</DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="3"
-      DTS:DTSID="{5B3F9AA9-C68C-44B6-94B1-6A3E51E7898C}"
-      DTS:ObjectName="QA_S_ORGANIZATIONID"
-      DTS:Required="True">
-      <DTS:Property
-        DTS:DataType="3"
-        DTS:Name="ParameterValue">20</DTS:Property>
-    </DTS:PackageParameter>
-  </DTS:PackageParameters>
   <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A8E9D1DA-E038-4993-88C2-09727B520283}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DEV_DB_ConnectionString">
+      <DTS:VariableValue
+        DTS:DataType="8">Data Source=192.168.1.17;User ID=devops;Initial Catalog=Dev_DB_DevOps;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;</DTS:VariableValue>
+    </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{63A6BC0C-D6DC-494F-8162-4F1F44A115AE}"
@@ -232,6 +118,96 @@
       DTS:ObjectName="DEV_DB_Password">
       <DTS:VariableValue
         DTS:DataType="8">Y8SlNYl7bLpzPkGIyB2j</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{90BB40AB-0FBE-4D3E-8470-377332F700B1}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DEV_DB_ServerName">
+      <DTS:VariableValue
+        DTS:DataType="8">192.168.1.17</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9E5A0939-77F1-411E-B6D1-03BF3E4B4C92}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DEV_DB_SMO_ConnectionString">
+      <DTS:VariableValue
+        DTS:DataType="8">SqlServerName=192.168.1.17;UseWindowsAuthentication=False;UserName=devops;</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{862FF46F-0099-4C71-9929-A3982E34D2A4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DEV_DB_UserName">
+      <DTS:VariableValue
+        DTS:DataType="8">devops</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{289E3ECE-774A-413A-9321-480765CEF228}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="QA_DB_ConnectionString">
+      <DTS:VariableValue
+        DTS:DataType="8">Data Source=192.168.1.17;User ID=devops;Initial Catalog=QA_DB_DevOps;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1B689626-928F-4E80-8D91-8E05146B6359}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="QA_DB_Password">
+      <DTS:VariableValue
+        DTS:DataType="8">Y8SlNYl7bLpzPkGIyB2j</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CE4A466C-0C29-4057-812A-8B6942B27834}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="QA_DB_ServerName">
+      <DTS:VariableValue
+        DTS:DataType="8">192.168.1.17</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{467273C4-1B5D-4F69-A488-7A42D5EBF217}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="QA_DB_SMO_ConnectionString">
+      <DTS:VariableValue
+        DTS:DataType="8">SqlServerName=192.168.1.17;UseWindowsAuthentication=False;UserName=devops;</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ABD79A51-AB0C-4C1B-ACCD-F1A4B540E47D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="QA_DB_UserName">
+      <DTS:VariableValue
+        DTS:DataType="8">devops</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{09C1551F-6714-47D3-8C8F-7761B802EAB3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="QA_R_PO_CATAGORY_Id">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ADD67CD4-5331-4172-9FE6-80B3A01C81A3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="QA_S_ORGANIZATIONID">
+      <DTS:VariableValue
+        DTS:DataType="3">20</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -303,13 +279,13 @@
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              name="Expression">(DT_I4)[REPLACE]((DT_WSTR,4)#{Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[S_ORGANIZATIONID]},(DT_WSTR,4)#{Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[S_ORGANIZATIONID]},(DT_WSTR,4)@[$Package::QA_S_ORGANIZATIONID])</property>
+                              name="Expression">(DT_I4)[REPLACE]((DT_WSTR,4)#{Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[S_ORGANIZATIONID]},(DT_WSTR,4)#{Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - DEV.Outputs[OLE DB Source Output].Columns[S_ORGANIZATIONID]},(DT_WSTR,4)@[User::QA_S_ORGANIZATIONID])</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
-                              name="FriendlyExpression">(DT_I4)REPLACE((DT_WSTR,4)S_ORGANIZATIONID,(DT_WSTR,4)S_ORGANIZATIONID,(DT_WSTR,4)@[$Package::QA_S_ORGANIZATIONID])</property>
+                              name="FriendlyExpression">(DT_I4)REPLACE((DT_WSTR,4)S_ORGANIZATIONID,(DT_WSTR,4)S_ORGANIZATIONID,(DT_WSTR,4)@[User::QA_S_ORGANIZATIONID])</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
@@ -826,13 +802,13 @@
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              name="Expression">(DT_I4)[REPLACE]((DT_WSTR,4)#{Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[S_ORGANIZATIONID]},(DT_WSTR,4)#{Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[S_ORGANIZATIONID]},(DT_WSTR,4)@[$Package::QA_S_ORGANIZATIONID])</property>
+                              name="Expression">(DT_I4)[REPLACE]((DT_WSTR,4)#{Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[S_ORGANIZATIONID]},(DT_WSTR,4)#{Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[S_ORGANIZATIONID]},(DT_WSTR,4)@[User::QA_S_ORGANIZATIONID])</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
-                              name="FriendlyExpression">(DT_I4)REPLACE((DT_WSTR,4)S_ORGANIZATIONID,(DT_WSTR,4)S_ORGANIZATIONID,(DT_WSTR,4)@[$Package::QA_S_ORGANIZATIONID])</property>
+                              name="FriendlyExpression">(DT_I4)REPLACE((DT_WSTR,4)S_ORGANIZATIONID,(DT_WSTR,4)S_ORGANIZATIONID,(DT_WSTR,4)@[User::QA_S_ORGANIZATIONID])</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -849,13 +825,13 @@
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              name="Expression">(DT_I4)[REPLACE]((DT_WSTR,4)#{Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[R_PO_CATEGORY_Id]},(DT_WSTR,4)#{Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[R_PO_CATEGORY_Id]},(DT_WSTR,4)@[$Package::QA_R_PO_CATEGORY_Id])</property>
+                              name="Expression">(DT_I4)[REPLACE]((DT_WSTR,4)#{Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[R_PO_CATEGORY_Id]},(DT_WSTR,4)#{Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - DEV.Outputs[OLE DB Source Output].Columns[R_PO_CATEGORY_Id]},(DT_WSTR,4)@[User::QA_R_PO_CATAGORY_Id])</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
-                              name="FriendlyExpression">(DT_I4)REPLACE((DT_WSTR,4)R_PO_CATEGORY_Id,(DT_WSTR,4)R_PO_CATEGORY_Id,(DT_WSTR,4)@[$Package::QA_R_PO_CATEGORY_Id])</property>
+                              name="FriendlyExpression">(DT_I4)REPLACE((DT_WSTR,4)R_PO_CATEGORY_Id,(DT_WSTR,4)R_PO_CATEGORY_Id,(DT_WSTR,4)@[User::QA_R_PO_CATAGORY_Id])</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
@@ -1612,7 +1588,7 @@
     design-time-name="Package\Sequence Container\MPMCategory Data Transfer">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="168.8,41.6"
           Id="Package\Sequence Container\MPMCategory Data Transfer\MPMCategory - QA"
@@ -1656,9 +1632,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1680,9 +1654,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1718,7 +1690,7 @@
     design-time-name="Package\Sequence Container\MPMPriority Data Transfer">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="159.2,41.6"
           Id="Package\Sequence Container\MPMPriority Data Transfer\MPMPriority - QA"
@@ -1750,9 +1722,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1774,16 +1744,14 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="s"
           ParentId="Package\Sequence Container\MPMPriority Data Transfer"
           FontInfo="{assembly:Null}"
-          Size="33.6,NaN"
+          Size="33.6,40"
           Id="106314f4-a0bb-497d-919b-b97a1cfe3361"
           TopLeft="5.5,5.5" />
       </GraphLayout>

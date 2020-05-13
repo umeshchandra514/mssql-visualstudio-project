@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Data-Migration-1</Name>
-    <LastWriteTime>2020-05-13T15:02:10.4629798Z</LastWriteTime>
+    <LastWriteTime>2020-05-13T15:29:41.4749858Z</LastWriteTime>
     <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>Package.dtsx</Name>
-      <LastWriteTime>2020-05-13T15:02:09.8437429Z</LastWriteTime>
+      <LastWriteTime>2020-05-13T15:29:40.2377897Z</LastWriteTime>
       <LastKnownProtectionLevel>DontSaveSensitive</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
