@@ -8,7 +8,7 @@
       DTS:ConnectionString="Data Source=192.168.1.17;User ID=devops;Initial Catalog=QA_DB_DevOps;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAACAAAAAAAQZgAAAAEAACAAAADqRTbbBjFxVJjgBTGUcXaNHLMToe8mT6wl5J+KyZsb7wAAAAAOgAAAAAIAACAAAADfr9wZEiiVSqvjKrt9W0qRD36CbSsgY2HIoA50ARX6HoAAAABAO0sJkHumBs27oQamnj3qv64BQDYFEC5glzqFEJex2640/RLXJXzV/i4WU0Rr//y6FSwbpZ12bvO6gZmvLjW2A+fevrqqAxBNFJoSDTwkKwNcH88hwf7FczI/wuKn1doqWYDqGElkr0wxkQz7TIJvhGPI1pnMN3wKODh9sDSQGUAAAADDoxgYFBbOyElFa7aO4tJdgakh32EfaaEiT1entXqs9deqnwET1VE6WEcZCb/FMO+apN3khikllAJmTTjypd2h</DTS:Password>
+        Sensitive="1"></DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

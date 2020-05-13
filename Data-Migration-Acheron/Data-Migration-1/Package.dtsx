@@ -11,8 +11,9 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="89"
-  DTS:VersionGUID="{3C88091D-F651-4CE4-9955-D0B52E37D6E7}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="90"
+  DTS:VersionGUID="{A4663E23-9207-422D-BAD7-E60D86C48652}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -44,8 +45,7 @@
           DTS:ConnectionString="Data Source=192.168.1.17;User ID=devops;Initial Catalog=Dev_DB_DevOps;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABnYFoweYn2wyV27+Y8gl0pLXdZW/J8hfX6z8KLl9u6fQAAAAAOgAAAAAIAACAAAACIzsNHFhmrMF84DAu4D8+mbx8/rqsiI3VczVx5r2ACRzAAAADss41ghwfquvefIe8vf1LnoNA0pkHNw+Ev1aaCz66Ntr7unGnngvyJuMS+L59IZTZAAAAAHGR+b1XNzJxV49Q0z8cOGayHs+muhNPgWeHw0zAMQBN67Jfc6gLzvu8/mweTc7twHwKWjg2XD2PIVz3R5wMgEA</DTS:Password>
+            Sensitive="1"></DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -67,8 +67,7 @@
           DTS:ConnectionString="Data Source=192.168.1.17;User ID=devops;Initial Catalog=QA_DB_DevOps;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAw5aI3WlzZVosOX/UYotxb+v2NXVTqkaQwBNFvuOfbjQAAAAAOgAAAAAIAACAAAABCmUT21FiZ+5uoCpVWE/wW5Jodec0hMpWnSSm68bNh4zAAAAChZbvx6K1gWoabYgxVSnFdjxv9SWMXFsYA6DF5U9X217fKloHzcHrYNkEz9UR0WSpAAAAA9jH+3q7jaQdbbMJBoZ1+LrymaFwf+SffyGS92Es28lFwpiiB6/8u4TGUWgm+3AXUdwpj8WarSu6p1uyavj8ZIA</DTS:Password>
+            Sensitive="1"></DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>

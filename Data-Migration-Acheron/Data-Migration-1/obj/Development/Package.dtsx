@@ -11,8 +11,9 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="84"
-  DTS:VersionGUID="{E22D5958-E6B0-4E39-AF78-4233FD083523}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="90"
+  DTS:VersionGUID="{A4663E23-9207-422D-BAD7-E60D86C48652}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -41,11 +42,10 @@
         DTS:Name="UserName">@[$Package::DEV_DB_UserName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=umesh;User ID=umesh;Initial Catalog=DEV-DB;Provider=SQLNCLI11.1;Auto Translate=False;">
+          DTS:ConnectionString="Data Source=192.168.1.17;User ID=devops;Initial Catalog=Dev_DB_DevOps;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAiibEbkglr6pyg7nfZ4fHSqbr4Cy4tArsOsc71bUjA8QAAAAAOgAAAAAIAACAAAAD5zULxgSNaG5ZZo3z4/KMlnGvbzuLcHlmzhja59TP07RAAAACxbY9SMPZinSTsxhjBV+RMQAAAAJT8qqaqWFlqNgS8abamvNDEF6xjoj4iLCT/PGHkXDcwoaUoVyXO6JXCB3yY1sIyT6owFWmZkJPBCUgE8sfLu50</DTS:Password>
+            Sensitive="1"></DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -64,11 +64,10 @@
         DTS:Name="UserName">@[$Package::QA_DB_UserName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=umesh;User ID=umesh;Initial Catalog=QA-DB;Provider=SQLNCLI11.1;Auto Translate=False;">
+          DTS:ConnectionString="Data Source=192.168.1.17;User ID=devops;Initial Catalog=QA_DB_DevOps;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADqnuYEQ6iBFSOtBP3DMOmFDLdgdF39NoB3zGFS2Rlx1gAAAAAOgAAAAAIAACAAAABd7i+2xwfBOjTLgTU22VTZfKwx5hgREAE9i04lOPfEEhAAAADihc5dGZxCXJ0jhJZfAyRkQAAAANCpiluXqyOnC2aVlSzNIJWLcdW5duHAfoNW/djwj2YOfqSEF0EKYMF+t6GSsX993nf851bUUBOPnr4Txh3/FfY</DTS:Password>
+            Sensitive="1"></DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -81,22 +80,17 @@
       DTS:ObjectName="DEV_DB_ConnectionString">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">Data Source=umesh;User ID=umesh;Initial Catalog=DEV-DB;Provider=SQLNCLI11.1;Auto Translate=False;</DTS:Property>
+        DTS:Name="ParameterValue">Data Source=192.168.1.17;User ID=devops;Initial Catalog=Dev_DB_DevOps;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
       DTS:DTSID="{0095FA03-789C-4AA7-B32D-6A22D7C41DA6}"
       DTS:ObjectName="DEV_DB_Password"
-      DTS:Required="True"
-      DTS:Sensitive="True">
+      DTS:Required="True">
       <DTS:Property
-        DTS:Name="ParameterValue">
-        <DTS:Property
-          DTS:DataType="8"
-          DTS:Name="ParameterValue"
-          Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACBSEW2VnlHcMWQHerslDU0FQGf4dwK8J79vqeO/gHMggAAAAAOgAAAAAIAACAAAAAIJvs6C1F613ZsN+qA+vYtLGCW6F0Kf0vh9tx8EWPOuBAAAABHNSDoARbdARjaUpEfDcKzQAAAAB3v6+tgbTQmkq4/hvmSEgegfcwGIYjIcMs6/eo0vrfG1xZEnwGDeWFbqVQIcFXrZ6TM1+zrZtt9YJtKZEHE0ug</DTS:Property>
-      </DTS:Property>
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Y8SlNYl7bLpzPkGIyB2j</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -106,7 +100,7 @@
       DTS:Required="True">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">umesh</DTS:Property>
+        DTS:Name="ParameterValue">192.168.1.17</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -116,7 +110,7 @@
       DTS:Required="True">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">umesh</DTS:Property>
+        DTS:Name="ParameterValue">devops</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -125,21 +119,16 @@
       DTS:ObjectName="QA_DB_ConnectionString">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">Data Source=umesh;User ID=umesh;Initial Catalog=QA-DB;Provider=SQLNCLI11.1;Auto Translate=False;</DTS:Property>
+        DTS:Name="ParameterValue">Data Source=192.168.1.17;User ID=devops;Initial Catalog=QA_DB_DevOps;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
       DTS:DTSID="{61FF7E82-2104-427B-A7F0-720FAD0A46A4}"
-      DTS:ObjectName="QA_DB_Password"
-      DTS:Sensitive="True">
+      DTS:ObjectName="QA_DB_Password">
       <DTS:Property
-        DTS:Name="ParameterValue">
-        <DTS:Property
-          DTS:DataType="8"
-          DTS:Name="ParameterValue"
-          Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1efsrOvcVU6jX5DTzJ98JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABJhyVn0biQakyTqHgkfrqC+RNTdVOhSDPUSPfvUkja3QAAAAAOgAAAAAIAACAAAADgvBhqele7l3hj0x1tzdoVFL7nBCLixCiMOaDTENZbdhAAAAA0kd7PviUbpXUNTH2m/WxlQAAAAEd2Z4NwiXttxfIzYl+6655DRYWx7a570z2MtL03OrrEi33wYskaSR0PjEQJPQ2DFFvbWDNExvBs130uDUexO1M</DTS:Property>
-      </DTS:Property>
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Y8SlNYl7bLpzPkGIyB2j</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -148,7 +137,7 @@
       DTS:ObjectName="QA_DB_ServerName">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">umesh</DTS:Property>
+        DTS:Name="ParameterValue">192.168.1.17</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -157,7 +146,7 @@
       DTS:ObjectName="QA_DB_UserName">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">umesh</DTS:Property>
+        DTS:Name="ParameterValue">devops</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
